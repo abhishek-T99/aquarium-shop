@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- <h1>Product Details:</h1>
+    <p>Name: {{ product.name|title }} ({{ product.additional_info|title }})</p>
+    <p>Price: NRs. {{ product.price }}</p>
+    <p>Availability: {{ product.inStock }}</p>
+    <p>Description: {{ product.description }}</p>
+    <hr/>
+    <a href="{% url 'products:product-list' %}">Go to products</a> -->
+
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="lg:w-4/5 mx-auto flex flex-wrap">
+            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+              <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ product.product_type|title }}</h2>
+              <h1 class="text-gray-900 text-3xl title-font font-medium mb-4">{{ product.name|title  }}  {{ product.additional_info|title }}</h1>
+              <h2 class="text-gray-700 text-xl title-font font-medium mb-5">NRs. {{ product.price }}</h2>
+              <div class="flex border-t border-gray-200 py-2">
+                <!-- <span class="text-blue-900">{{ product.inStock }}</span> -->
+                <span class="ml-auto text-gray-900">{{ product.inStock }}</span>
+              </div>
+              <div class="flex border-t border-b mb-6 border-gray-200 py-2">
+                <span class="text-gray-500">Available Quantity:</span>
+                <span class="ml-auto text-gray-900">{{ product.quantity }}</span>
+              </div>
+              <button class="flex ml-auto text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded">
+                Buy Now
+              </button>
+              <div class="flex mb-4">
+                <a class="flex-grow text-blue-500 border-b-2 border-blue-500 py-2 text-lg px-1">Description</a>
+              </div>
+              <p class="leading-relaxed mb-4">{{ product.description }}</p>
+            </div>
+            <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{{ product.product_image.url }}">
+          </div>
+        </div>
+      </section>
+
+
+{% endblock content %}
