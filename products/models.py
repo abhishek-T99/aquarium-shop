@@ -17,7 +17,7 @@ class Product(models.Model):
     name = models.CharField(max_length=50)
     quantity = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=7, decimal_places=2)
-    additional_info = models.CharField(null=True, max_length=20)   # for product volume, weight, etc
+    additional_info = models.CharField(blank=True, max_length=20)   # for product volume, weight, etc
     description = models.TextField()
     product_type = models.CharField(choices=PRODUCT_CHOICES, max_length=100)
     product_image = models.ImageField(null=True, blank=True, upload_to="images/")

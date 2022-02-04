@@ -11,11 +11,12 @@
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
+    {% include 'navbar.html' %}
     <div class="max-w-7xl mx-auto">
-        {% include 'navbar.html' %}
         {% block content %}
         {% endblock content %}
     </div>
+    {% include 'footer.html' %}
     {% include "scripts.html" %}
 </body>
 </html>
