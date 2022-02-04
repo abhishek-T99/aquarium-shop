@@ -7,4 +7,6 @@
         <li><a href="{% url 'products:product-detail' product.pk %}">{{ product.name|title }} - {{ product.product_type|title }}</a></li>
         {% endfor %}
     </ul>
+    <hr/>
+    <a href="{% url 'landing-page' %}">Go to homepage</a>
 {% endblock content %}

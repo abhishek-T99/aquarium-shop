@@ -5,6 +5,9 @@ from django.views import generic
 
 from .models import Product
 
+class LandingPageView(generic.TemplateView):
+    template_name = "landing.html"
+
 
 class ProductListView(generic.ListView):
     template_name = "products/product_list.html"

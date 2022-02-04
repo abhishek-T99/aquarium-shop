@@ -6,4 +6,6 @@
     <p>Price: NRs. {{ product.price }}</p>
     <p>Availability: {{ product.inStock }}</p>
     <p>Description: {{ product.description }}</p>
+    <hr/>
+    <a href="{% url 'products:product-list' %}">Go to products</a>
 {% endblock content %}
