@@ -10,3 +10,8 @@ class ProductListView(generic.ListView):
     template_name = "products/product_list.html"
     queryset = Product.objects.all()
     context_object_name = "products"
+
+class ProductDetailView(generic.DetailView):
+    template_name = "products/product_detail.html"
+    queryset = Product.objects.all()
+    context_object_name = "product"

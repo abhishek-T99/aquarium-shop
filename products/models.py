@@ -16,7 +16,7 @@ class Product(models.Model):
 
     name = models.CharField(max_length=50)
     quantity = models.IntegerField(default=0)
-    price = models.DecimalField(max_digits=5, decimal_places=2)
+    price = models.DecimalField(max_digits=7, decimal_places=2)
     additional_info = models.CharField(null=True, max_length=20)   # for product volume, weight, etc
     description = models.TextField()
     product_type = models.CharField(choices=PRODUCT_CHOICES, max_length=100)
@@ -25,3 +25,9 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} : {self.product_type}"
+
+    @property
+    def inStock(self):
+        if self.quantity > 0:
+            return "In stock"
+        return "Not in stock"
