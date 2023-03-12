@@ -30,4 +30,4 @@ class Product(models.Model):
     def inStock(self):
         if self.quantity > 0:
             return "In stock"
-        return "Not in stock"
+        return "Out of stock"
